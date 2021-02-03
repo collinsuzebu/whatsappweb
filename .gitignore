@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+
+
+# db
+db.sqlite3
+
+# client profile information
+profiles/
+firefox_cache*/
+chrome_cache*/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# The original whatsapi github repo needs to be cloned
+# wrapper/

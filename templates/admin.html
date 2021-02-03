@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+
+{% block page_content %}
+
+<header id="header">
+</header>
+{% include 'modal.html' %}
+
+<div class="main-container">
+  <aside class="">
+    <div class="brand">{{project_name}}</div>
+    <div class="nav-mobile">
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">System Stats</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="content-container">
+    <div class="row">
+      <div class="col col-12-12 col-sm-6-12 col-md-4-12 col-xl-2-12">
+        <div class="panel healthy">
+          <div class="panel-body center">
+            <h2 id="no_active_clients">
+              <div class="fas fa-circle-notch fa-spin"></div>
+            </h2>
+          </div>
+          <div class="panel-footer center">
+            Active
+          </div>
+        </div>
+      </div>
+      <div class="col col-12-12 col-sm-6-12 col-md-4-12 col-xl-2-12">
+        <div class="panel sick">
+          <div class="panel-body center">
+            <h2 id="no_inactive_clients">
+              <div class="fas fa-circle-notch fa-spin"></div>
+            </h2>
+          </div>
+          <div class="panel-footer center">
+            Failing
+          </div>
+        </div>
+      </div>
+      <div class="col col-12-12 col-sm-6-12 col-md-4-12 col-xl-2-12">
+        <div class="panel pending">
+          <div class="panel-body center">
+            <h2 id="total_clients">
+              <div class="fas fa-circle-notch fa-spin"></div>
+            </h2>
+          </div>
+          <div class="panel-footer center">
+            Clients
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <table class="table">
+          <thead class="thead-inverse">
+            <tr>
+              <th>#</th>
+              <th>Client ID</th>
+              <th>Driver-LoggedIn</th>
+              <th>Service URL</th>
+              <th>Created at</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="clients_info_table">
+            <!-- js to populate field -->
+          </tbody>
+        </table>
+      </div>
+
+    {% include 'form.html' %}
+    {% include 'form-delete.html' %}
+    {% include 'form-add-admin-user.html' %}
+
+    <!-- <div class="row">
+      <div class="col col-12-12">
+        <div class="panel">
+          <div class="panel-body"></div>
+        </div>
+      </div>
+    </div> -->
+
+</div>
+
+{% endblock %}
